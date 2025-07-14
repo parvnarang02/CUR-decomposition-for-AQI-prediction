@@ -64,17 +64,22 @@ Collected from the **Central Pollution Control Board (CPCB)**:
 - CUR reconstruction error distribution
 
 ---
+### 📊 Results Summary
 
-## 📊 Results Summary
+| Model       | **RMSE** | **MAE**  | **Time Required (s)** |
+|-------------|----------|----------|------------------------|
+| RAW         | 86.21    | 67.05    | 10                     |
+| RAW + CUR   | 62.12    | 46.23    | 12                     |
+| CUR 1       | 46.56    | 36.78    | **0** ⚡               |
+| CUR 2       | 39.70    | 22.96    | 52                     |
+| **CUR 3** ✅ | **25.82** | **17.15** | 21                    |
+| PCA         | 45.44    | 28.14    | 95                     |
+| SVM         | 43.84    | 23.36    | 755                    |
 
-| Experiment | RMSE  | MAE   | R² Score |
-|------------|-------|-------|----------|
-| Raw + GBR  | 86.87 | 67.00 | -        |
-| CUR + GBR  | 62.00 | 46.00 | 0.78     |
-| CUR + Preprocessing 2 | **39.70** | **22.96** | **0.9124** |
-
-- CUR showed superior performance over PCA and raw baseline
-- CUR decomposition achieved a Frobenius relative error of **~0.22**
+- ✅ **CUR 3** achieved the **best overall performance** in both RMSE and MAE.
+- ⚡ **CUR 1** had the **fastest runtime** (0 seconds).
+- CUR methods consistently outperformed both PCA and raw feature models.
+- SVM offered decent accuracy but with significantly higher execution time.
 
 ---
 
